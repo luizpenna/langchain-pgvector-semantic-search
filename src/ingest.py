@@ -120,7 +120,7 @@ def ingest_pdf ():
 
     store = PGVector(
         embeddings=embeddings,
-        collection_name=collection_name,
+        collection_name=f"{collection_name}_{provider}",  # Append provider to collection name to avoid conflicts if using multiple providers
         connection=connection_string,
         use_jsonb=True,                
     )
